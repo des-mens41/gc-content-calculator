@@ -11,15 +11,11 @@ GC content is a fundamental metric in molecular biology and bioinformatics. It a
 4. Calculates & Formats the exact GC ratio, cleanly printing results to 2 decimal places.
 
 ## Example output
-'''text
 ATGCGTACG -> 55.56 %
 GGCCAATTT -> 44.44 %
 TTTAAACGC -> 33.33 %
-'''
 
 ## How to Run
 1. Ensure you have your target sequences inside a file named sample.txt in the same directory.
 2. Run the script from your terminal:
-'''bash
 python gc_calculator.py
-'''
