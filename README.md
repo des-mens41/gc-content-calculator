@@ -1,33 +1,25 @@
 # GC Content Calculator
 
-A Python tool that reads DNA sequences from a file and calculates the GC content (percentage of guanine and cytosine bases) for each one.
+A lightweight Python utility designed to analyze DNA sequences from text files and calculate their GC content percentage. 
 
-## Why GC content matters
+GC content is a fundamental metric in molecular biology and bioinformatics. It affects the stability of DNA molecules (since G-C pairs form three hydrogen bonds versus two for A-T, lending high-GC regions more thermal stability). It is widely used in primer design for PCR, and tracking variations between species and genomic regions.
 
-GC content is a fundamental metric in molecular biology and bioinformatics. It affects DNA stability (G-C base pairs form three hydrogen bonds versus two for A-T, making high-GC regions more thermally stable), is used in primer design for PCR, and varies characteristically between species and genome regions, making it useful for genome comparison and identification.
-
-## How it works
-
-1. Reads DNA sequences line by line from sample.txt
-2. For each sequence, counts the number of G and C bases
-3. Calculates the percentage: (GC count / total length) × 100
-4. Prints the result for each sequence, rounded to 2 decimal places
+## How It Works
+1. Reads DNA sequences line-by-line from a text file (`sample.txt`).
+2. Cleans inputs automatically by stripping trailing whitespaces or hidden newline characters (`\n`).
+3. Normalizes Case to seamlessly handle both uppercase and lowercase DNA strings.
+4. Calculates & Formats the exact GC ratio, cleanly printing results to 2 decimal places.
 
 ## Example output
-ATGCGTACG = 55.56 %
-GGCCAATTT = 44.44 %
-TTTAAACGC = 33.33 %
+'''text
+ATGCGTACG -> 55.56 %
+GGCCAATTT -> 44.44 %
+TTTAAACGC -> 33.33 %
+'''
 
-## Usage
-
-1. Add your DNA sequences to sample.txt, one sequence per line
-2. Run the script:
+## How to Run
+1. Ensure you have your target sequences inside a file named sample.txt in the same directory.
+2. Run the script from your terminal:
+'''bash
 python gc_calculator.py
-
-## What I learned building this
-
-This was my first Python project, built while learning fundamentals: variables, string indexing, loops, conditionals, functions, and file handling. It taught me the difference between print() and return, and the importance of testing code by predicting output before running it.
-
-## Next steps
-
-Planned improvements: handling FASTA-format files, adding reverse complement and translation features, and exporting results with pandas.
+'''
